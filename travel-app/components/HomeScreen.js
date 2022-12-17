@@ -9,7 +9,9 @@ import {
   TouchableOpacity,
   ImageBackground,
 } from "react-native";
+
 import colors from "../assets/colors/colors";
+
 import Feather from "react-native-vector-icons/Feather";
 import Entypo from "react-native-vector-icons/Entypo";
 import activitiesData from "../assets/data/activitiesData";
@@ -19,6 +21,8 @@ import learnMoreData from "../assets/data/learnMoreData";
 import { SafeAreaView } from "react-native-safe-area-context";
 import profile from "../assets/images/person.png";
 import { auth } from "../firebaseConfig";
+
+import DrawerNavigation from "./DrawerNavigation";
 
 Feather.loadFont();
 
@@ -87,17 +91,11 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <ScrollView>
         {/* header */}
-        <SafeAreaView>
+        {/* <SafeAreaView>
           <View style={styles.menuWrapper}>
-            <Feather
-              name="menu"
-              size={32}
-              color={colors.black}
-              style={styles.menuIcon}
-            />
             <Image source={profile} style={styles.profileImage} />
           </View>
-        </SafeAreaView>
+        </SafeAreaView> */}
 
         {/* Discover */}
         <View style={styles.discoverWrapper}>
@@ -158,13 +156,13 @@ const HomeScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    colors: colors.white,
+    backgroundColor: "white",
   },
   menuWrapper: {
     marginHorizontal: 20,
     marginTop: 20,
     flexDirection: "row",
-    justifyContent: "space-between",
+    justifyContent: "flex-end",
     alignItems: "center",
   },
   menuIcon: {},
