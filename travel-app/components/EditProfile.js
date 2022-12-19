@@ -116,7 +116,7 @@ const EditProfile = () => {
             >
               <ImageBackground
                 source={{
-                  uri: image,
+                  uri: "https://i.ibb.co/XkLwCJK/person.png",
                 }}
                 style={{ height: 100, width: 100 }}
                 imageStyle={{ borderRadius: 15 }}
