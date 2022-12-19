@@ -87,7 +87,7 @@ const ProfileStackScreen = ({ navigation }) => (
     }}
   >
     <Stack.Screen
-      name="Profile"
+      name="ProfileScreen"
       component={Profile}
       options={{
         headerShown: false,

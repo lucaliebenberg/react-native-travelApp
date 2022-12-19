@@ -13,24 +13,22 @@ const Drawer = createDrawerNavigator();
 const App = () => {
   return (
     <NavigationContainer>
-      <Drawer.Navigator
-        drawerContent={(props) => <DrawerContent {...props} activeTint />}
-      >
+      <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
         <Drawer.Screen
           name="HomeDrawer"
           component={MainTabScreen}
           options={{
             headerTitle: "",
             headerBackgroundColor: "#white",
-            headerLeft: () => (
-              <Icon.Button
-                name="menu"
-                size={25}
-                backgroundColor="#fff"
-                color="#000"
-                onPress={() => {}}
-              />
-            ),
+            // headerLeft: () => (
+            //   <Icon.Button
+            //     name="menu"
+            //     size={25}
+            //     backgroundColor="#fff"
+            //     color="#000"
+            //     onPress={() => {}}
+            //   />
+            // ),
           }}
         />
       </Drawer.Navigator>
