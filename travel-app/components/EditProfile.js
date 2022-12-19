@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   ImageBackground,
   TextInput,
+  SafeAreaView,
 } from "react-native";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
@@ -17,17 +18,47 @@ import colors from "../assets/colors/colors";
 import BottomSheet from "reanimated-bottom-sheet";
 import Animated from "react-native-reanimated";
 
+// import ImagePicker from "react-native-image-crop-picker";
+
 const EditProfile = () => {
+  // const [image, setImage] = useState("https://i.ibb.co/XkLwCJK/person.png");
+
+  // const takePhotoFromCamera = () => {
+  //   ImagePicker.openCamera({
+  //     compressImageMaxWidth: 300,
+  //     compressImageMaxHeight: 300,
+  //     cropping: true,
+  //     compressImageQuality: 0.7,
+  //   }).then((image) => {
+  //     console.log(image);
+  //     setImage(image.path);
+  //     bs.current.snapTo(1);
+  //   });
+  // };
+
+  // const choosePhotoFromLibrary = () => {
+  //   ImagePicker.openPicker({
+  //     width: 300,
+  //     height: 300,
+  //     cropping: true,
+  //     compressImageQuality: 0.7,
+  //   }).then((image) => {
+  //     console.log(image);
+  //     setImage(image.path);
+  //     bs.current.snapTo(1);
+  //   });
+  // };
+
   const renderInner = () => (
     <View style={styles.panel}>
       <View style={{ alignItems: "center" }}>
         <Text style={styles.panelTitle}>Upload Photo</Text>
         <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
       </View>
-      <TouchableOpacity style={styles.panelButton}>
+      <TouchableOpacity style={styles.panelButton} onPress={() => {}}>
         <Text style={styles.panelButtonTitle}>Take Photo</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.panelButton}>
+      <TouchableOpacity style={styles.panelButton} onPress={() => {}}>
         <Text style={styles.panelButtonTitle}>Choose From Library</Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -51,7 +82,7 @@ const EditProfile = () => {
   const fall = new Animated.Value(1);
 
   return (
-    <View
+    <SafeAreaView
       style={styles.container}
       options={{
         headerShown: false,
@@ -85,7 +116,7 @@ const EditProfile = () => {
             >
               <ImageBackground
                 source={{
-                  uri: "https://i.ibb.co/XkLwCJK/person.png",
+                  uri: image,
                 }}
                 style={{ height: 100, width: 100 }}
                 imageStyle={{ borderRadius: 15 }}
@@ -179,7 +210,7 @@ const EditProfile = () => {
           <Text style={styles.panelButtonTitle}>Submit</Text>
         </TouchableOpacity>
       </Animated.View>
-    </View>
+    </SafeAreaView>
   );
 };
 

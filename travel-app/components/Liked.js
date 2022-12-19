@@ -1,6 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { View, Text, StyleSheet, ScrollView, SafeAreaView } from "react-native";
 
 import albumPage from "../assets/data/albumPage";
 import Card from "./Card";
@@ -8,7 +7,7 @@ import Seperator from "./Seperator";
 
 const Liked = ({ navigation }) => {
   return (
-    <>
+    <SafeAreaView>
       <ScrollView>
         <View style={styles.albumContainer}>
           {albumPage.map((item, index) => (
@@ -20,7 +19,7 @@ const Liked = ({ navigation }) => {
           ))}
         </View>
       </ScrollView>
-    </>
+    </SafeAreaView>
   );
 };
 

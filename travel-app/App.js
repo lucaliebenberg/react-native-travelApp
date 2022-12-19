@@ -20,6 +20,7 @@ const App = () => {
           options={{
             headerTitle: "",
             headerBackgroundColor: "#white",
+            headerShown: false,
           }}
         />
       </Drawer.Navigator>

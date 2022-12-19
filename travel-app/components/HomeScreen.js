@@ -109,24 +109,32 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <ScrollView>
         {/* header */}
-        {/* <SafeAreaView>
+        <SafeAreaView>
           <View style={styles.menuWrapper}>
+            <TouchableOpacity onPress={() => navigation.openDrawer()}>
+              <Feather
+                name="menu"
+                size={32}
+                color={colors.black}
+                style={styles.menuIcon}
+              />
+            </TouchableOpacity>
             <Image source={profile} style={styles.profileImage} />
           </View>
-        </SafeAreaView> */}
+        </SafeAreaView>
 
         {/* Discover */}
         <View style={styles.discoverWrapper}>
           <Text style={styles.discoverTitle}>Discover</Text>
           <View style={styles.discoverCategoriesWrapper}>
-            <Text
+            {/* <Text
               style={[styles.discoverCategoryText, { color: colors.orange }]}
             >
               All
             </Text>
             <Text style={styles.discoverCategoryText}>Destinations</Text>
             <Text style={styles.discoverCategoryText}>Cities</Text>
-            <Text style={styles.discoverCategoryText}>Experiences</Text>
+            <Text style={styles.discoverCategoryText}>Experiences</Text> */}
           </View>
           <View style={styles.discoverItemsWrapper}>
             <FlatList
@@ -194,7 +202,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 20,
     marginTop: 20,
     flexDirection: "row",
-    justifyContent: "flex-end",
+    justifyContent: "space-between",
     alignItems: "center",
   },
   menuIcon: {},
