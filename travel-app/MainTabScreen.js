@@ -24,8 +24,9 @@ MaterialCommunityIcons.loadFont();
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
-const ProfileStack = createStackNavigator();
+// const ProfileStack = createStackNavigator();
 
+// the tab navigation
 const TabNavigator = () => {
   return (
     <Tab.Navigator
@@ -76,6 +77,7 @@ const TabNavigator = () => {
   );
 };
 
+// profile stack screen component
 const ProfileStackScreen = ({ navigation }) => (
   <Stack.Navigator
     screenOptions={{
@@ -105,6 +107,15 @@ const ProfileStackScreen = ({ navigation }) => (
   </Stack.Navigator>
 );
 
+// this is the liked screen stack
+const LikedStackScreen = ({ navigation }) => {
+  <Stack.Navigator>
+    <Stack.Screen name="Liked" component={Liked} />
+    <Stack.Screen name="Shared Album" component={SharedAlbum} />
+  </Stack.Navigator>;
+};
+
+// main tab component
 const MainTabScreen = () => {
   return (
     <Stack.Navigator>

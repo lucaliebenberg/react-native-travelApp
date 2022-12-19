@@ -20,15 +20,6 @@ const App = () => {
           options={{
             headerTitle: "",
             headerBackgroundColor: "#white",
-            // headerLeft: () => (
-            //   <Icon.Button
-            //     name="menu"
-            //     size={25}
-            //     backgroundColor="#fff"
-            //     color="#000"
-            //     onPress={() => {}}
-            //   />
-            // ),
           }}
         />
       </Drawer.Navigator>

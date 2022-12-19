@@ -19,7 +19,7 @@ const Card = ({ item, navigation }) => {
       >
         <View style={styles.imageContainer}>
           <Text style={styles.imageTitle}>{item.title}</Text>
-          <Text style={styles.imageSubtitle}>{`Created by ${item.user}`}</Text>
+          <Text style={styles.imageSubtitle}>{`${item.user}`}</Text>
         </View>
       </Pressable>
     </ImageBackground>

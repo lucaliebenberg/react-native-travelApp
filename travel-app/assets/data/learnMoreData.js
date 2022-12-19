@@ -14,6 +14,18 @@ const learnMoreData = [
     title: "Tour of the Australia Outback",
     image: require("../images/australia.png"),
   },
+
+  {
+    id: "learnMore-4",
+    title: "Exploration of Hawaii Waters",
+    image: require("../images/beach4.jpg"),
+  },
+
+  {
+    id: "learnMore-5",
+    title: "Breathtaking Carribean Beach",
+    image: require("../images/beach5.jpg"),
+  },
 ];
 
 export default learnMoreData;

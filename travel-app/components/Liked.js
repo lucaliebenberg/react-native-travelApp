@@ -13,7 +13,7 @@ const Liked = ({ navigation }) => {
         <View style={styles.albumContainer}>
           {albumPage.map((item, index) => (
             <View key={index}>
-              <Card item={item} navigation={navigation} />
+              <Card item={item} />
               {/* add seperator if index is 1 */}
               {index === 1 && <Seperator />}
             </View>

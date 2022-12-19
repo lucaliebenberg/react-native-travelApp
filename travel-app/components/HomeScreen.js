@@ -18,6 +18,7 @@ import activitiesData from "../assets/data/activitiesData";
 import discoverCategoriesData from "../assets/data/discoverCategoriesData";
 import discoverData from "../assets/data/discoverData";
 import learnMoreData from "../assets/data/learnMoreData";
+import forYouData from "../assets/data/forYouData";
 import { SafeAreaView } from "react-native-safe-area-context";
 import profile from "../assets/images/person.png";
 import { auth } from "../firebaseConfig";
@@ -87,6 +88,23 @@ const HomeScreen = ({ navigation }) => {
     );
   };
 
+  const renderForYouItem = ({ item }) => {
+    return (
+      <ImageBackground
+        source={item.image}
+        style={[
+          styles.learnMoreItem,
+          {
+            marginLeft: item.id === "forYou-1" ? 20 : 0,
+          },
+        ]}
+        imageStyle={styles.learnMoreItemImage}
+      >
+        <Text style={styles.learnMoreItemText}>{item.title}</Text>
+      </ImageBackground>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <ScrollView>
@@ -142,6 +160,20 @@ const HomeScreen = ({ navigation }) => {
             <FlatList
               data={learnMoreData}
               renderItem={renderLearnMoreItem}
+              keyExtractor={(item) => item.id}
+              horizontal
+              showsHorizontalScrollIndicator={false}
+            />
+          </View>
+        </View>
+
+        {/* For You */}
+        <View style={styles.learnMoreWrapper}>
+          <Text style={styles.learnMoreTitle}>For You</Text>
+          <View style={styles.learnMoreItemsWrapper}>
+            <FlatList
+              data={forYouData}
+              renderItem={renderForYouItem}
               keyExtractor={(item) => item.id}
               horizontal
               showsHorizontalScrollIndicator={false}
