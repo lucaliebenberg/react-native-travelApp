@@ -6,6 +6,7 @@ import * as Font from "expo-font";
 import Details from "./components/Details";
 import Liked from "./components/Liked";
 import Profile from "./components/Profile";
+import GlobeScreen from "./components/GlobeScreen";
 import Login from "./components/LoginScreen";
 import colors from "./assets/colors/colors";
 import Entypo from "react-native-vector-icons/Entypo";
@@ -49,6 +50,16 @@ const TabNavigator = () => {
         options={{
           tabBarIcon: ({ color }) => (
             <Entypo name="home" size={32} color={color} />
+          ),
+          headerShown: false,
+        }}
+      />
+      <Tab.Screen
+        name="World"
+        component={GlobeScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <Entypo name="globe" size={32} color={color} />
           ),
           headerShown: false,
         }}
