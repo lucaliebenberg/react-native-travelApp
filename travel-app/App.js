@@ -8,6 +8,7 @@ import { DrawerContent } from "./components/DrawerContent";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import Onboard from "./components/Onboard";
+import LoginScreen from "./components/LoginScreen";
 
 const Drawer = createDrawerNavigator();
 
@@ -23,6 +24,17 @@ const App = () => {
       {showOnboard && <Onboard handleDone={handleOnboardFinish} />}
       {!showOnboard && (
         <NavigationContainer>
+          <LoginScreen />
+        </NavigationContainer>
+      )}
+    </>
+  );
+};
+
+export default App;
+
+{
+  /* <NavigationContainer>
           <Drawer.Navigator
             drawerContent={(props) => <DrawerContent {...props} />}
           >
@@ -36,10 +48,5 @@ const App = () => {
               }}
             />
           </Drawer.Navigator>
-        </NavigationContainer>
-      )}
-    </>
-  );
-};
-
-export default App;
+        </NavigationContainer> */
+}

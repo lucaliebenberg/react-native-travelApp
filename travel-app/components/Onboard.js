@@ -6,20 +6,20 @@ import AppIntroSlider from "react-native-app-intro-slider";
 
 const data = [
   {
-    title: "Save time by tracking your studies",
-    text: "Schedule your classes, assignments, quizzes and more",
+    title: "Explore the whole world right here",
+    text: "Search for the best holiday destinations",
     image: require("../assets/images/Onboard1.png"),
     bg: "#59b2ab",
   },
   {
-    title: "Stay on top of your education",
-    text: "Reduce your stress, increase your productivity",
+    title: "Plan and book your flights with ease",
+    text: "Reduce your stress and let us help you with this process ",
     image: require("../assets/images/Onboard2.png"),
     bg: "#febe29",
   },
   {
-    title: "Spend more time doing the things you love",
-    text: "Get started within five minutes",
+    title: "Spend more time enjoying the experience",
+    text: "Sit back, relax and enjoy the ride!",
     image: require("../assets/images/Onboard3.png"),
     bg: "#22bcb5",
   },

@@ -6,7 +6,7 @@ import * as Font from "expo-font";
 import Details from "./components/Details";
 import Liked from "./components/Liked";
 import Profile from "./components/Profile";
-import Login from "./components/Login";
+import Login from "./components/LoginScreen";
 import colors from "./assets/colors/colors";
 import Entypo from "react-native-vector-icons/Entypo";
 import MaterialCommunityIcons from "react-native-vector-icons/MaterialCommunityIcons";
