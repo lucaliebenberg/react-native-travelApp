@@ -30,7 +30,7 @@ const LoginScreen = ({ navigation }) => {
 
       <FormInput
         labelValue={email}
-        onChangeText={(userEmail) => setEmail(userEmail)}
+        // onChangeText={(userEmail) => setEmail(userEmail)}
         placeholderText="Email"
         iconType="user"
         keyboardType="email-address"
@@ -40,7 +40,7 @@ const LoginScreen = ({ navigation }) => {
 
       <FormInput
         labelValue={password}
-        onChangeText={(userPassword) => setPassword(userPassword)}
+        // onChangeText={(userPassword) => setPassword(userPassword)}
         placeholderText="Password"
         iconType="lock"
         secureTextEntry={true}
@@ -48,14 +48,13 @@ const LoginScreen = ({ navigation }) => {
 
       <FormButton
         buttonTitle="Sign In"
-        onPress={() => login(email, password)}
+        // onPress={() => login(email, password)}
       />
 
       <TouchableOpacity style={styles.forgotButton} onPress={() => {}}>
         <Text style={styles.navButtonText}>Forgot Password?</Text>
       </TouchableOpacity>
 
-      {/* {Platform.OS === "android" ? ( */}
       <View>
         <SocialButton
           buttonTitle="Sign In with Facebook"
@@ -73,7 +72,6 @@ const LoginScreen = ({ navigation }) => {
           // onPress={() => googleLogin()}
         />
       </View>
-      {/* ) : null} */}
 
       <TouchableOpacity
         style={styles.forgotButton}

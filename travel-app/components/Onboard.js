@@ -144,10 +144,10 @@ const styles = StyleSheet.create({
     fontSize: 14,
   },
   dotStyle: {
-    backgroundColor: colors.blueFaded,
+    backgroundColor: "#CCC",
   },
   activeDotStyle: {
-    backgroundColor: colors.blue,
+    backgroundColor: "orange",
   },
 });
 
