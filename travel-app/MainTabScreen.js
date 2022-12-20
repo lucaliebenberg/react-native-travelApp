@@ -149,6 +149,29 @@ const MainTabScreen = () => {
   );
 };
 
+//  learn more stack component
+const LearnMoreStack = () => {
+  return (
+    <Stack.Navigator>
+      {/* <Stack.Screen
+          name="Login"
+          component={Login}
+          options={{ headerShown: false }}
+        /> */}
+      <Stack.Screen
+        name="TabNavigator"
+        component={TabNavigator}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Details"
+        component={Details}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
+};
+
 const styles = StyleSheet.create({
   tabBar: {
     backgroundColor: "white",

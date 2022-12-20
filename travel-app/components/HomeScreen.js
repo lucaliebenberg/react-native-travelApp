@@ -73,35 +73,51 @@ const HomeScreen = ({ navigation }) => {
 
   const renderLearnMoreItem = ({ item }) => {
     return (
-      <ImageBackground
-        source={item.image}
-        style={[
-          styles.learnMoreItem,
-          {
-            marginLeft: item.id === "learnMore-1" ? 20 : 0,
-          },
-        ]}
-        imageStyle={styles.learnMoreItemImage}
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("Details", {
+            item: item,
+          })
+        }
       >
-        <Text style={styles.learnMoreItemText}>{item.title}</Text>
-      </ImageBackground>
+        <ImageBackground
+          source={item.image}
+          style={[
+            styles.learnMoreItem,
+            {
+              marginLeft: item.id === "learnMore-1" ? 20 : 0,
+            },
+          ]}
+          imageStyle={styles.learnMoreItemImage}
+        >
+          <Text style={styles.learnMoreItemText}>{item.title}</Text>
+        </ImageBackground>
+      </TouchableOpacity>
     );
   };
 
   const renderForYouItem = ({ item }) => {
     return (
-      <ImageBackground
-        source={item.image}
-        style={[
-          styles.learnMoreItem,
-          {
-            marginLeft: item.id === "forYou-1" ? 20 : 0,
-          },
-        ]}
-        imageStyle={styles.learnMoreItemImage}
+      <TouchableOpacity
+        onPress={() =>
+          navigation.navigate("Details", {
+            item: item,
+          })
+        }
       >
-        <Text style={styles.learnMoreItemText}>{item.title}</Text>
-      </ImageBackground>
+        <ImageBackground
+          source={item.image}
+          style={[
+            styles.learnMoreItem,
+            {
+              marginLeft: item.id === "forYou-1" ? 20 : 0,
+            },
+          ]}
+          imageStyle={styles.learnMoreItemImage}
+        >
+          <Text style={styles.learnMoreItemText}>{item.title}</Text>
+        </ImageBackground>
+      </TouchableOpacity>
     );
   };
 
