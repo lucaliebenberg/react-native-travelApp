@@ -135,7 +135,9 @@ const HomeScreen = ({ navigation }) => {
                 style={styles.menuIcon}
               />
             </TouchableOpacity>
-            <Image source={profile} style={styles.profileImage} />
+            <TouchableOpacity onPress={() => navigation.navigate("Profile")}>
+              <Image source={profile} style={styles.profileImage} />
+            </TouchableOpacity>
           </View>
         </SafeAreaView>
 

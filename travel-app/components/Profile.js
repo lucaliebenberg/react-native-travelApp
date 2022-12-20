@@ -11,7 +11,7 @@ const Profile = ({ navigation }) => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.userInfoSection}>
-        <View style={{ flexDirection: "row", marginTop: 15 }}>
+        <View style={{ flexDirection: "row", marginTop: 70 }}>
           <Avatar.Image
             source={{
               uri: "https://i.ibb.co/XkLwCJK/person.png",

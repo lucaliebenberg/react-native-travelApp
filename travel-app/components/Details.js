@@ -34,7 +34,11 @@ const Details = ({ route, navigation }) => {
       </ImageBackground>
       <View style={styles.descriptionWrapper}>
         <View style={styles.heartWrapper}>
-          <Entypo name="heart" size={32} color={colors.orange} />
+          <TouchableOpacity
+            onPress={() => alert("You have liked this destination")}
+          >
+            <Entypo name="heart" size={32} color={colors.orange} />
+          </TouchableOpacity>
         </View>
 
         <View style={styles.descriptionTextWrapper}>
