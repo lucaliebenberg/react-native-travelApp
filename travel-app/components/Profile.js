@@ -79,7 +79,9 @@ const Profile = ({ navigation }) => {
         <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
             <Icon name="heart-outline" size={25} color={colors.orange} />
-            <Text style={styles.menuItemText}>Your favourites</Text>
+            <TouchableRipple onPress={() => navigation.navigate("Liked")}>
+              <Text style={styles.menuItemText}>Your favourites</Text>
+            </TouchableRipple>
           </View>
         </TouchableRipple>
         <TouchableRipple onPress={() => {}}>

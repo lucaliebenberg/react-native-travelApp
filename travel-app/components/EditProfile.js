@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import {
   StyleSheet,
   Text,
@@ -7,7 +7,14 @@ import {
   ImageBackground,
   TextInput,
   SafeAreaView,
+  Platform,
 } from "react-native";
+
+import * as ImagePicker from "expo-image-picker";
+import { Constants } from "expo-constants";
+import { Camera } from "expo-camera";
+import { shareAsync } from "expo-sharing";
+import * as MediaLibrary from "expo-media-library";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
@@ -18,36 +25,68 @@ import colors from "../assets/colors/colors";
 import BottomSheet from "reanimated-bottom-sheet";
 import Animated from "react-native-reanimated";
 
-// import ImagePicker from "react-native-image-crop-picker";
+const EditProfile = ({ navigation }) => {
+  let cameraRef = useRef();
+  const [hasCameraPermission, setHasCameraPermission] = useState();
+  const [hasMediaLibraryPermission, setHasMediaLibraryPermission] = useState();
+  const [photo, setPhoto] = useState();
+  const [image, setImage] = useState(null);
 
-const EditProfile = () => {
-  // const [image, setImage] = useState("https://i.ibb.co/XkLwCJK/person.png");
+  // camera useEffect
+  useEffect(() => {
+    (async () => {
+      const cameraPermission = await Camera.requestCameraPermissionsAsync();
+      const mediaLibraryPermission =
+        await MediaLibrary.requestPermissionsAsync();
+      setHasCameraPermission(cameraPermission.status === "granted");
+      setHasMediaLibraryPermission(mediaLibraryPermission.status === "granted");
+    })();
+  }, []);
 
-  // const takePhotoFromCamera = () => {
-  //   ImagePicker.openCamera({
-  //     compressImageMaxWidth: 300,
-  //     compressImageMaxHeight: 300,
-  //     cropping: true,
-  //     compressImageQuality: 0.7,
-  //   }).then((image) => {
-  //     console.log(image);
-  //     setImage(image.path);
-  //     bs.current.snapTo(1);
-  //   });
-  // };
+  // camera permissions check
+  // if (hasCameraPermission === undefined) {
+  //   return <Text>Requesting Permission...</Text>;
+  // } else if (!hasCameraPermission) {
+  //   return (
+  //     <Text>
+  //       Permission for camera not granted. Please change this in settings.
+  //     </Text>
+  //   );
+  // }
 
-  // const choosePhotoFromLibrary = () => {
-  //   ImagePicker.openPicker({
-  //     width: 300,
-  //     height: 300,
-  //     cropping: true,
-  //     compressImageQuality: 0.7,
-  //   }).then((image) => {
-  //     console.log(image);
-  //     setImage(image.path);
-  //     bs.current.snapTo(1);
-  //   });
-  // };
+  // take picture function
+  let takePic = async () => {
+    let options = {
+      quality: 1,
+      base64: true,
+      exif: false,
+    };
+
+    let newPhoto = await cameraRef.current.takePictureAsync(options);
+    setPhoto(newPhoto);
+  };
+
+  // image picker useEffect
+  useEffect(async () => {
+    if (Platform.OS !== "web") {
+      const { status } =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
+    }
+  }, []);
+
+  // image picker
+  const PickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    if (!result.canceled) {
+      setImage(result.image);
+    }
+  };
 
   const renderInner = () => (
     <View style={styles.panel}>
@@ -55,10 +94,10 @@ const EditProfile = () => {
         <Text style={styles.panelTitle}>Upload Photo</Text>
         <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
       </View>
-      <TouchableOpacity style={styles.panelButton} onPress={() => {}}>
+      <TouchableOpacity style={styles.panelButton} onPress={takePic}>
         <Text style={styles.panelButtonTitle}>Take Photo</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.panelButton} onPress={() => {}}>
+      <TouchableOpacity style={styles.panelButton} onPress={PickImage}>
         <Text style={styles.panelButtonTitle}>Choose From Library</Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -103,6 +142,13 @@ const EditProfile = () => {
           opacity: Animated.add(0.1, Animated.multiply(fall, 1.0)),
         }}
       >
+        <View>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("ProfileScreen")}
+          >
+            <Icon name="chevron-left" size={35} color="black" />
+          </TouchableOpacity>
+        </View>
         <View style={{ alignItems: "center" }}>
           <TouchableOpacity onPress={() => bs.current.snapTo(0)}>
             <View
@@ -114,9 +160,9 @@ const EditProfile = () => {
                 alignItems: "center",
               }}
             >
-              <ImageBackground
+              {/* <ImageBackground
                 source={{
-                  uri: "https://i.ibb.co/XkLwCJK/person.png",
+                  uri: image,
                 }}
                 style={{ height: 100, width: 100 }}
                 imageStyle={{ borderRadius: 15 }}
@@ -142,7 +188,36 @@ const EditProfile = () => {
                     }}
                   />
                 </View>
-              </ImageBackground>
+              </ImageBackground> */}
+              {image && (
+                <ImageBackground
+                  source={{ uri: image }}
+                  style={{ height: 100, width: 100 }}
+                  imageStyle={{ borderRadius: 15 }}
+                />
+              )}
+
+              <View
+                style={{
+                  flex: 1,
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <Icon
+                  name="camera"
+                  size={35}
+                  color="grey"
+                  style={{
+                    opacity: 0.7,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    borderWidth: 1,
+                    borderColor: "#fff",
+                    borderRadius: 10,
+                  }}
+                />
+              </View>
             </View>
           </TouchableOpacity>
           <Text style={{ marginTop: 10, fontSize: 18, fontWeight: "bold" }}>
