@@ -27,64 +27,32 @@ import Animated from "react-native-reanimated";
 
 const EditProfile = ({ navigation }) => {
   let cameraRef = useRef();
-  const [hasCameraPermission, setHasCameraPermission] = useState();
-  const [hasMediaLibraryPermission, setHasMediaLibraryPermission] = useState();
-  const [photo, setPhoto] = useState();
-  const [image, setImage] = useState(null);
+  const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
+  const [hasMediaLibraryPermission, setHasMediaLibraryPermission] =
+    useState(null);
+  const [image, setImage] = useState("https://i.ibb.co/XkLwCJK/person.png");
 
-  // camera useEffect
+  // gallerry permissions useEffect
   useEffect(() => {
     (async () => {
-      const cameraPermission = await Camera.requestCameraPermissionsAsync();
-      const mediaLibraryPermission =
-        await MediaLibrary.requestPermissionsAsync();
-      setHasCameraPermission(cameraPermission.status === "granted");
-      setHasMediaLibraryPermission(mediaLibraryPermission.status === "granted");
+      const galleryStatus = await ImagePicker.requestCameraPermissionsAsync();
+      setHasGalleryPermission(galleryStatus.status === "granted");
     })();
   }, []);
 
-  // camera permissions check
-  // if (hasCameraPermission === undefined) {
-  //   return <Text>Requesting Permission...</Text>;
-  // } else if (!hasCameraPermission) {
-  //   return (
-  //     <Text>
-  //       Permission for camera not granted. Please change this in settings.
-  //     </Text>
-  //   );
-  // }
-
-  // take picture function
-  let takePic = async () => {
-    let options = {
-      quality: 1,
-      base64: true,
-      exif: false,
-    };
-
-    let newPhoto = await cameraRef.current.takePictureAsync(options);
-    setPhoto(newPhoto);
-  };
-
-  // image picker useEffect
-  useEffect(async () => {
-    if (Platform.OS !== "web") {
-      const { status } =
-        await ImagePicker.requestMediaLibraryPermissionsAsync();
-    }
-  }, []);
-
   // image picker
-  const PickImage = async () => {
+  const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All.All,
+      mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
       aspect: [4, 3],
       quality: 1,
     });
 
+    console.log(result);
+
     if (!result.canceled) {
-      setImage(result.image);
+      setImage(result.assets[0].uri);
     }
   };
 
@@ -94,10 +62,10 @@ const EditProfile = ({ navigation }) => {
         <Text style={styles.panelTitle}>Upload Photo</Text>
         <Text style={styles.panelSubtitle}>Choose Your Profile Picture</Text>
       </View>
-      <TouchableOpacity style={styles.panelButton} onPress={takePic}>
+      <TouchableOpacity style={styles.panelButton} onPress={() => {}}>
         <Text style={styles.panelButtonTitle}>Take Photo</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.panelButton} onPress={PickImage}>
+      <TouchableOpacity style={styles.panelButton} onPress={() => pickImage()}>
         <Text style={styles.panelButtonTitle}>Choose From Library</Text>
       </TouchableOpacity>
       <TouchableOpacity
@@ -196,7 +164,7 @@ const EditProfile = ({ navigation }) => {
                   imageStyle={{ borderRadius: 15 }}
                 />
               )}
-
+              {/* 
               <View
                 style={{
                   flex: 1,
@@ -217,7 +185,7 @@ const EditProfile = ({ navigation }) => {
                     borderRadius: 10,
                   }}
                 />
-              </View>
+              </View> */}
             </View>
           </TouchableOpacity>
           <Text style={{ marginTop: 10, fontSize: 18, fontWeight: "bold" }}>
@@ -288,8 +256,6 @@ const EditProfile = ({ navigation }) => {
     </SafeAreaView>
   );
 };
-
-export default EditProfile;
 
 const styles = StyleSheet.create({
   container: {
@@ -379,3 +345,5 @@ const styles = StyleSheet.create({
     color: "#05375a",
   },
 });
+
+export default EditProfile;
