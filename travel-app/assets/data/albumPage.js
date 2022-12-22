@@ -15,13 +15,13 @@ const albumPage = [
   {
     id: 1,
     title: "Bali",
-    user: "Booked",
+    user: "Wishlist",
     background: image1,
   },
   {
     id: 2,
     title: "Cape Town",
-    user: "Booked",
+    user: "Wishlist",
     background: image2,
   },
   {

@@ -30,7 +30,7 @@ const EditProfile = ({ navigation }) => {
   const [hasGalleryPermission, setHasGalleryPermission] = useState(null);
   const [hasMediaLibraryPermission, setHasMediaLibraryPermission] =
     useState(null);
-  const [image, setImage] = useState("https://i.ibb.co/XkLwCJK/person.png");
+  const [image, setImage] = useState();
 
   // gallerry permissions useEffect
   useEffect(() => {
@@ -157,6 +157,13 @@ const EditProfile = ({ navigation }) => {
                   />
                 </View>
               </ImageBackground> */}
+              {!image && (
+                <ImageBackground
+                  source={{ uri: "https://i.ibb.co/XkLwCJK/person.png" }}
+                  style={{ height: 100, width: 100 }}
+                  imageStyle={{ borderRadius: 15 }}
+                />
+              )}
               {image && (
                 <ImageBackground
                   source={{ uri: image }}
@@ -164,6 +171,7 @@ const EditProfile = ({ navigation }) => {
                   imageStyle={{ borderRadius: 15 }}
                 />
               )}
+
               {/* 
               <View
                 style={{

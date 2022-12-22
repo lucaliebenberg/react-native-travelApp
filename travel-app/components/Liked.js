@@ -14,7 +14,7 @@ const Liked = ({ navigation }) => {
             <View key={index}>
               <Card item={item} />
               {/* add seperator if index is 1 */}
-              {index === 1 && <Seperator />}
+              {/* {index === 1 && <Seperator />} */}
             </View>
           ))}
         </View>
