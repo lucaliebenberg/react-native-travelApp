@@ -2,9 +2,11 @@ const learnMoreData = [
   {
     id: "learnMore-1",
     title: "Snorkelling in Mexico",
-    image: require("../images/boatbeach.png"),
-    imageBig: require("../images/boatbeach.png"),
-    description: "lohshs usjs isisi owsowo",
+    location: "Mexico",
+    image: require("../images/boatbeach2.jpg"),
+    imageBig: require("../images/boatbeach2.jpg"),
+    description:
+      "An ideal introduction to sea kayaking around the stunning historical Islands of Tofino's harbour. Come explore the spectacular scenery of the area and learn what makes the area so fascinating.",
     liked: true,
     price: 200,
     rating: 4.7,
@@ -13,8 +15,9 @@ const learnMoreData = [
   {
     id: "learnMore-2",
     title: "Surfing in Hawaii",
-    image: require("../images/beach.png"),
-    imageBig: require("../images/beach.png"),
+    location: "Hawaii",
+    image: require("../images/beachV1.jpg"),
+    imageBig: require("../images/beachV1.jpg"),
     description:
       "An ideal introduction to sea kayaking around the stunning historical Islands of Tofino's harbour. Come explore the spectacular scenery of the area and learn what makes the area so fascinating.",
     liked: true,
@@ -25,8 +28,9 @@ const learnMoreData = [
   {
     id: "learnMore-3",
     title: "Tour of Australia",
-    image: require("../images/australia.png"),
-    imageBig: require("../images/australia.png"),
+    location: "Australia",
+    image: require("../images/australiaV1.jpg"),
+    imageBig: require("../images/australiaV1.jpg"),
     description:
       "An ideal introduction to sea kayaking around the stunning historical Islands of Tofino's harbour. Come explore the spectacular scenery of the area and learn what makes the area so fascinating.",
     liked: true,
@@ -38,6 +42,7 @@ const learnMoreData = [
   {
     id: "learnMore-4",
     title: "Exploration of Hawaii Waters",
+    location: "Hawaii",
     image: require("../images/beach4.jpg"),
     imageBig: require("../images/beach4.jpg"),
     description:
@@ -51,6 +56,7 @@ const learnMoreData = [
   {
     id: "learnMore-5",
     title: "Breathtaking Carribean Beach",
+    location: "Carribean",
     image: require("../images/beach5.jpg"),
     imageBig: require("../images/beach5.jpg"),
     description:
