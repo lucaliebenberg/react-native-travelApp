@@ -6,8 +6,8 @@ import AppIntroSlider from "react-native-app-intro-slider";
 
 const data = [
   {
-    title: "Explore the whole world right here",
-    text: "Search for the best holiday destinations",
+    title: "Explore the whole world",
+    text: "Search for the best holiday destinations around the globe",
     image: require("../assets/images/Onboard1.png"),
     bg: "#59b2ab",
   },
@@ -147,7 +147,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#CCC",
   },
   activeDotStyle: {
-    backgroundColor: "orange",
+    backgroundColor: "#FF7463",
   },
 });
 
