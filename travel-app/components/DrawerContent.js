@@ -34,23 +34,23 @@ export function DrawerContent(props) {
                 size={50}
               />
               <View style={{ marginLeft: 15, flexDirection: "column" }}>
-                <Title style={styles.title}>Luca Liebenberg</Title>
-                <Caption style={styles.caption}>@l.liebenberg</Caption>
+                <Title style={styles.title}>John Doe</Title>
+                <Caption style={styles.caption}>@johndoe@gmail.com</Caption>
               </View>
             </View>
 
             <View style={styles.row}>
               <View style={styles.section}>
                 <Paragraph style={[styles.paragraph, styles.caption]}>
-                  80
+                  12
                 </Paragraph>
-                <Caption style={styles.caption}>Following</Caption>
+                <Caption style={styles.caption}>Trips</Caption>
               </View>
               <View style={styles.section}>
                 <Paragraph style={[styles.paragraph, styles.caption]}>
                   80
                 </Paragraph>
-                <Caption style={styles.caption}>Followers</Caption>
+                <Caption style={styles.caption}>Wishlisted</Caption>
               </View>
             </View>
           </View>
@@ -84,7 +84,7 @@ export function DrawerContent(props) {
               }}
             />
           </Drawer.Section>
-          <Drawer.Section title="Preferences">
+          {/* <Drawer.Section title="Preferences">
             <TouchableRipple
               onPress={() => {
                 toggleTheme();
@@ -97,7 +97,7 @@ export function DrawerContent(props) {
                 </View>
               </View>
             </TouchableRipple>
-          </Drawer.Section>
+          </Drawer.Section> */}
         </View>
       </DrawerContentScrollView>
       <Drawer.Section style={styles.bottomDrawerSection}>

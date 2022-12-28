@@ -91,6 +91,12 @@ const HomeScreen = ({ navigation }) => {
           imageStyle={styles.learnMoreItemImage}
         >
           <Text style={styles.learnMoreItemText}>{item.title}</Text>
+          <View style={styles.learnMoreItemLocationWrapper}>
+            <Entypo name="location-pin" size={18} color={colors.white} />
+            <Text style={styles.learnMoreItemLocationText}>
+              {item.location}
+            </Text>
+          </View>
         </ImageBackground>
       </TouchableOpacity>
     );
@@ -115,7 +121,7 @@ const HomeScreen = ({ navigation }) => {
           ]}
           imageStyle={styles.learnMoreItemImage}
         >
-          <Text style={styles.learnMoreItemText}>{item.title}</Text>
+          <Text style={styles.forYouItemText}>{item.title}</Text>
         </ImageBackground>
       </TouchableOpacity>
     );
@@ -272,6 +278,19 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 5,
   },
+  learnMoreItemLocationWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 3,
+    marginLeft: 5,
+    marginBottom: 4,
+  },
+  learnMoreItemLocationText: {
+    marginLeft: 4,
+    fontWeight: "bold",
+    fontSize: 14,
+    color: colors.white,
+  },
   discoverItemLocationText: {
     marginLeft: 5,
     fontWeight: "bold",
@@ -329,7 +348,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: colors.white,
     marginHorizontal: 10,
-    marginVertical: 20,
+    marginVertical: 6,
+  },
+  forYouItemText: {
+    fontWeight: "bold",
+    fontSize: 18,
+    color: colors.white,
+    marginHorizontal: 10,
+    marginVertical: 8,
   },
 });
 

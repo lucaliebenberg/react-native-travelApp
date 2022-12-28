@@ -1,7 +1,7 @@
 const learnMoreData = [
   {
     id: "learnMore-1",
-    title: "Snorkelling in Mexico",
+    title: "Mexico Waters",
     location: "Mexico",
     image: require("../images/boatbeach2.jpg"),
     imageBig: require("../images/boatbeach2.jpg"),
@@ -41,7 +41,7 @@ const learnMoreData = [
 
   {
     id: "learnMore-4",
-    title: "Exploration of Hawaii Waters",
+    title: "Hawaii Waters",
     location: "Hawaii",
     image: require("../images/beach4.jpg"),
     imageBig: require("../images/beach4.jpg"),
@@ -55,7 +55,7 @@ const learnMoreData = [
 
   {
     id: "learnMore-5",
-    title: "Breathtaking Carribean Beach",
+    title: "Carribean Beach",
     location: "Carribean",
     image: require("../images/beach5.jpg"),
     imageBig: require("../images/beach5.jpg"),

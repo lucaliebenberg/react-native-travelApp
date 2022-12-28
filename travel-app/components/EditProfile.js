@@ -18,7 +18,7 @@ import * as MediaLibrary from "expo-media-library";
 
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import Feather from "react-native-vector-icons/Feather";
+// import Feather from "react-native-vector-icons/Feather";
 
 import colors from "../assets/colors/colors";
 
@@ -258,7 +258,9 @@ const EditProfile = ({ navigation }) => {
           />
         </View>
         <TouchableOpacity style={styles.commandButton} onPress={() => {}}>
-          <Text style={styles.panelButtonTitle}>Submit</Text>
+          <Text style={styles.panelButtonTitle} onPress={() => {}}>
+            Submit
+          </Text>
         </TouchableOpacity>
       </Animated.View>
     </SafeAreaView>
@@ -294,7 +296,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: -1, height: -3 },
     shadowRadius: 2,
     shadowOpacity: 0.4,
-    // elevation: 5,
     paddingTop: 20,
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
