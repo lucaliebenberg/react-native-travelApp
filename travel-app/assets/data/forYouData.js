@@ -38,7 +38,6 @@ const forYouData = [
     rating: 5,
     duration: 2,
   },
-
   {
     id: "forYou-4",
     title: "Hawaii",
@@ -52,13 +51,64 @@ const forYouData = [
     rating: 5,
     duration: 2,
   },
-
   {
     id: "forYou-5",
-    title: "Cape Town",
-    image: require("../images/beach5.jpg"),
-    location: "Cape Town",
-    imageBig: require("../images/beach5.jpg"),
+    title: "Venice",
+    image: require("../images/item6.jpg"),
+    location: "Venice",
+    imageBig: require("../images/item6.jpg"),
+    description:
+      "An ideal introduction to sea kayaking around the stunning historical Islands of Tofino's harbour. Come explore the spectacular scenery of the area and learn what makes the area so fascinating.",
+    liked: true,
+    price: 50,
+    rating: 5,
+    duration: 2,
+  },
+  {
+    id: "forYou-6",
+    title: "Portugal",
+    image: require("../images/item9.jpg"),
+    location: "Portugal",
+    imageBig: require("../images/item9.jpg"),
+    description:
+      "An ideal introduction to sea kayaking around the stunning historical Islands of Tofino's harbour. Come explore the spectacular scenery of the area and learn what makes the area so fascinating.",
+    liked: true,
+    price: 50,
+    rating: 5,
+    duration: 2,
+  },
+  {
+    id: "forYou-7",
+    title: "Myknonos",
+    image: require("../images/item12.jpg"),
+    location: "Myknonos",
+    imageBig: require("../images/item12.jpg"),
+    description:
+      "An ideal introduction to sea kayaking around the stunning historical Islands of Tofino's harbour. Come explore the spectacular scenery of the area and learn what makes the area so fascinating.",
+    liked: true,
+    price: 50,
+    rating: 5,
+    duration: 2,
+  },
+  {
+    id: "forYou-8",
+    title: "Greenland",
+    image: require("../images/item11.jpg"),
+    location: "Greenland",
+    imageBig: require("../images/item11.jpg"),
+    description:
+      "An ideal introduction to sea kayaking around the stunning historical Islands of Tofino's harbour. Come explore the spectacular scenery of the area and learn what makes the area so fascinating.",
+    liked: true,
+    price: 50,
+    rating: 5,
+    duration: 2,
+  },
+  {
+    id: "forYou-9",
+    title: "Spain",
+    image: require("../images/item13.jpg"),
+    location: "Spain",
+    imageBig: require("../images/item13.jpg"),
     description:
       "An ideal introduction to sea kayaking around the stunning historical Islands of Tofino's harbour. Come explore the spectacular scenery of the area and learn what makes the area so fascinating.",
     liked: true,

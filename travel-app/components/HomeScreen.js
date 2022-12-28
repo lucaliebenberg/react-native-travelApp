@@ -122,6 +122,12 @@ const HomeScreen = ({ navigation }) => {
           imageStyle={styles.learnMoreItemImage}
         >
           <Text style={styles.forYouItemText}>{item.title}</Text>
+          <View style={styles.forYouItemLocationWrapper}>
+            <Entypo name="location-pin" size={18} color={colors.white} />
+            <Text style={styles.learnMoreItemLocationText}>
+              {item.location}
+            </Text>
+          </View>
         </ImageBackground>
       </TouchableOpacity>
     );
@@ -235,6 +241,7 @@ const styles = StyleSheet.create({
     height: 52,
     borderRadius: 10,
   },
+  // discover styling
   discoverWrapper: {
     marginTop: 20,
   },
@@ -250,7 +257,6 @@ const styles = StyleSheet.create({
   },
   discoverCategoryText: {
     marginRight: 30,
-    // fontFamily: "Lato-Regular",
     fontSize: 16,
     color: colors.gray,
   },
@@ -278,25 +284,13 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 5,
   },
-  learnMoreItemLocationWrapper: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginTop: 3,
-    marginLeft: 5,
-    marginBottom: 4,
-  },
-  learnMoreItemLocationText: {
-    marginLeft: 4,
-    fontWeight: "bold",
-    fontSize: 14,
-    color: colors.white,
-  },
   discoverItemLocationText: {
     marginLeft: 5,
     fontWeight: "bold",
     fontSize: 14,
     color: colors.white,
   },
+  // activities styling
   activitiesWrapper: {
     marginTop: 10,
   },
@@ -322,6 +316,7 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: colors.gray,
   },
+  // learn more styling
   learnMoreWrapper: {
     marginTop: 10,
   },
@@ -348,14 +343,40 @@ const styles = StyleSheet.create({
     fontSize: 18,
     color: colors.white,
     marginHorizontal: 10,
-    marginVertical: 6,
+    marginVertical: 2,
+  },
+  learnMoreItemLocationWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 3,
+    marginLeft: 5,
+    marginBottom: 7,
+  },
+  learnMoreItemLocationText: {
+    marginLeft: 4,
+    fontWeight: "bold",
+    fontSize: 14,
+    color: colors.white,
+  },
+  // for you styling
+  forYouItemLocationWrapper: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginLeft: 5,
+    marginBottom: 7,
+  },
+  forYouItemLocationText: {
+    marginLeft: 4,
+    fontWeight: "bold",
+    fontSize: 14,
+    color: colors.white,
   },
   forYouItemText: {
     fontWeight: "bold",
     fontSize: 18,
     color: colors.white,
     marginHorizontal: 10,
-    marginVertical: 8,
+    marginVertical: 5,
   },
 });
 
