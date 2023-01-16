@@ -9,6 +9,9 @@ const Liked = ({ navigation }) => {
   return (
     <SafeAreaView>
       <ScrollView>
+        <View>
+          <Text style={styles.title}>My Wishlist</Text>
+        </View>
         <View style={styles.albumContainer}>
           {albumPage.map((item, index) => (
             <View key={index}>
@@ -27,6 +30,11 @@ const styles = StyleSheet.create({
   albumContainer: {
     flex: 1,
     marginBottom: 32,
+  },
+  title: {
+    fontSize: 28,
+    fontWeight: "bold",
+    padding: 20,
   },
 });
 
