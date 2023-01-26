@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
-import { createStackNavigator } from "@react-navigation/stack";
+// import { createDrawerNavigator } from "@react-navigation/drawer"
 
 import { DrawerContent } from "./components/DrawerContent";
 
@@ -12,8 +11,8 @@ import MainTabScreen from "./MainTabScreen";
 import LoginScreen from "./components/LoginScreen";
 import SignupScreen from "./components/SignupScreen";
 
-const Drawer = createDrawerNavigator();
-const Stack = createStackNavigator();
+// const Drawer = createDrawerNavigator();
+// const Stack = createStackNavigator();
 
 const App = ({ navigation }) => {
   const [showOnboard, setShowOnboard] = useState(true);
@@ -22,43 +21,41 @@ const App = ({ navigation }) => {
     setShowOnboard(false);
   };
 
-  const authStack = () => {
-    <Stack.Navigator
-      screenOptions={{
-        headerStyle: {
-          backgroundColor: "#fff",
-          shadowColor: "#fff",
-        },
-        headerTintColor: "#000",
-      }}
-    >
-      <Stack.Screen
-        name="Log In"
-        component={LoginScreen}
-        options={{
-          headerShown: false,
-        }}
-      />
+  // const authStack = () => {
+  //   <Stack.Navigator
+  //     screenOptions={{
+  //       headerStyle: {
+  //         backgroundColor: "#fff",
+  //         shadowColor: "#fff",
+  //       },
+  //       headerTintColor: "#000",
+  //     }}
+  //   >
+  //     <Stack.Screen
+  //       name="ProfileScreen"
+  //       component={Profile}
+  //       options={{
+  //         headerShown: false,
+  //       }}
+  //     />
 
-      <Stack.Screen
-        name="Sign Up"
-        options={{
-          title: "Sign Up",
-          headerShown: false,
-        }}
-        component={SignupScreen}
-      />
-    </Stack.Navigator>;
-  };
+  //     <Stack.Screen
+  //       name="EditProfile"
+  //       options={{
+  //         title: "Edit Profile",
+  //         headerShown: false,
+  //       }}
+  //       component={EditProfile}
+  //     />
+  //   </Stack.Navigator>;
+  // };
 
   return (
     <>
-      <NavigationContainer>
-        {/* <LoginScreen /> */}
-        <SignupScreen />
-      </NavigationContainer>
+      {/* <LoginScreen /> */}
+      {/* <SignupScreen /> */}
 
-      {/* {showOnboard && <Onboard handleDone={handleOnboardFinish} />}
+      {showOnboard && <Onboard handleDone={handleOnboardFinish} />}
       {!showOnboard && (
         <NavigationContainer>
           <Drawer.Navigator
@@ -75,7 +72,7 @@ const App = ({ navigation }) => {
             />
           </Drawer.Navigator>
         </NavigationContainer>
-      )} */}
+      )}
     </>
   );
 };
