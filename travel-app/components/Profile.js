@@ -84,18 +84,18 @@ const Profile = ({ navigation }) => {
             </TouchableRipple>
           </View>
         </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        {/* <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
             <Icon name="credit-card" size={25} color={colors.orange} />
             <Text style={styles.menuItemText}>Payments</Text>
           </View>
-        </TouchableRipple>
-        <TouchableRipple onPress={() => {}}>
+        </TouchableRipple> */}
+        {/* <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
             <Icon name="share-outline" size={25} color={colors.orange} />
             <Text style={styles.menuItemText}>Tell Your Friends</Text>
           </View>
-        </TouchableRipple>
+        </TouchableRipple> */}
         {/* <TouchableRipple onPress={() => {}}>
           <View style={styles.menuItem}>
             <Icon

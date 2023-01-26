@@ -1,11 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, View, StatusBar } from "react-native";
+import { StyleSheet, Text, View, StatusBar, TextInput } from "react-native";
 import MapView from "react-native-maps";
 
 const GlobeScreen = () => {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
+      <TextInput />
       <MapView
         userInterfaceStyle="dark"
         style={StyleSheet.absoluteFill}

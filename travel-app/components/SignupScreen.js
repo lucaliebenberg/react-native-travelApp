@@ -5,22 +5,31 @@ import {
   TouchableOpacity,
   Platform,
   StyleSheet,
+  Image,
 } from "react-native";
 import FormInput from "./FormInput";
 import FormButton from "./FormButton";
 import SocialButton from "./SocialButton";
 // import {AuthContext} from '../navigation/AuthProvider';
 
-const SignupScreen = ({ navigation }) => {
+import { useNavigation } from "@react-navigation/native";
+
+const SignupScreen = ({ item }) => {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
   const [confirmPassword, setConfirmPassword] = useState();
+
+  const navigation = useNavigation();
 
   //   const {register} = useContext(AuthContext);
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Create an account</Text>
+      <Image
+        source={require("../assets/images/travel-logo.png")}
+        style={styles.logo}
+      />
+      <Text style={styles.text}>Travel Express</Text>
 
       <FormInput
         labelValue={email}
@@ -88,7 +97,7 @@ const SignupScreen = ({ navigation }) => {
 
       <TouchableOpacity
         style={styles.navButton}
-        onPress={() => navigation.navigate("Login")}
+        onPress={() => navigation.navigate("LoginScreen")}
       >
         <Text style={styles.navButtonText}>Have an account? Sign In</Text>
       </TouchableOpacity>
@@ -105,6 +114,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     padding: 20,
+  },
+  logo: {
+    height: 150,
+    width: 150,
+    resizeMode: "cover",
   },
   text: {
     // fontFamily: 'Kufam-SemiBoldItalic',
